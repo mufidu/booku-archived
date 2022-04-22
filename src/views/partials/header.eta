@@ -1,0 +1,6 @@
+<header>
+    <nav>
+        <h1><a href="/">booku</a></h1>
+        <a href="/books" class="app">App</a>
+    </nav>
+</header>

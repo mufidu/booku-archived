@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+
+<main>
+    <form action="/books/<%= it.book._id %>?_method=PUT" method="POST">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" placeholder="Title" , value="<%= it.book.title %>">
+        <label for="url">Author</label>
+        <input type="text" name="author" id="author" placeholder="Author" , value="<%= it.book.author %>">
+        <label for="url">Year</label>
+        <input type="number" name="year" id="year" placeholder="Year" , value="<%= it.book.year %>">
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <% for (category of it.categories) { %>
+            <option value="<%= category %>" <%= category === it.book.category ? 'selected' : '' %>>
+                <%= category %>
+            </option>
+            <% } %>
+        </select>
+        <label for="cover">Cover Link</label>
+        <input type="text" name="cover" id="cover" placeholder="Cover" value="<%= it.book.cover %>">
+        <button>Submit</button>
+    </form>
+
+    <form hidden id="deleteBook" method="post" action="/books/<%= it.book._id %>?_method=DELETE">
+    </form>
+    <button onclick="document.getElementById('deleteBook').submit();">Delete</button>
+
+    <br><br>
+    <a href="/books">&larr; Back</a>
+</main>

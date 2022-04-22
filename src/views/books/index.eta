@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+
+<main>
+    <form hidden id="newBookmark" method="get" action="/books/new"></form>
+    <button onclick="document.getElementById('newBookmark').submit()">Add a new book</button>
+
+    <% for (category of it.categories) { %>
+    <!-- If category is empty, skip -->
+    <% total = 0 %>
+    <% for (book of it.books) { %>
+    <% if (book.category === category) { %>
+    <% total = total + 1 %>
+    <% } %>
+    <% } %>
+    <% if (total == 0) { %>
+    <% continue %>
+    <% } %>
+
+    <h2><%= category %></h2>
+
+    <!-- Display all the books in the category -->
+    <% for (book of it.books) { %>
+    <% if (book.category === category) { %>
+
+    <h3><%= book.title %></h3>
+    <p>Author = <%= book.author %></p>
+    <p>Year = <%= book.year %></p>
+    <p>Category = <%= book.category %></p>
+
+    <!-- If the book has no cover, display a placeholder -->
+    <% if (book.cover == "undefined" || book.cover == "") { %>
+    <img src="https://via.placeholder.com/360x540?text=<%= book.title %>" alt="<%= book.title %>">
+    <% } else { %>
+    <img src="<%= book.cover %>" alt="<%= book.title %>">
+    <% } %>
+
+    <a href="/books/<%= book.id %>">details</a>
+    <a href="/books/<%= book.id %>/edit">edit</a>
+
+    <% } %>
+    <% } %>
+    <% } %>
+</main>

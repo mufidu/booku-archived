@@ -20,7 +20,7 @@
 ## Contributors
 
 1. [Muhammad Mufid Utomo](https://github.com/mufidu)
-2. [Muhammad Rafli Susanto]()
+2. [Muhammad Rafli Susanto](#)
 3. [Luthfi Novra](https://github.com/luthfinovra)
 
 ## Live Demo (Optional)

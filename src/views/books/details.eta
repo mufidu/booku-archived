@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+<main>
+    <h3><%= it.book.title %></h3>
+    <p>Author = <%= it.book.author %></p>
+    <p>Year = <%= it.book.year %></p>
+    <p>Category = <%= it.book.category %></p>
+
+    <!-- If the book has no cover, display a placeholder -->
+    <% if (it.book.cover == "undefined" || it.book.cover == "") { %>
+    <img src="https://via.placeholder.com/360x540?text=<%= it.book.title %>" alt="<%= it.book.title %>">
+    <% } else { %>
+    <img src="<%= it.book.cover %>" alt="<%= it.book.title %>">
+    <% } %>
+
+    <br>
+    <form hidden id="editBookmark" method="get" action="/books/<%= it.book._id %>/edit"></form>
+    <button onclick="document.getElementById('editBookmark').submit()">Edit</button>
+
+    <br>
+    <a href="/books">&larr; All books</a>
+</main>
