@@ -8,10 +8,16 @@
 
 ## Tech Stack
 
-1. HTML
-2. Sass
-3. Express JS
-4. Mongo DB
+1. HTML as Markup language
+2. Sass as CSS preprocessor
+3. Express JS as server engine
+4. Mongo DB as database
+5. Eta as templating engine
+
+## How to use
+
+1. Run `npm install` to install dependencies
+2. Run `npm start` to start the app
 
 ## Repository
 
