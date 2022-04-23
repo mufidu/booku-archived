@@ -5,9 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "cross-env NODE_ENV=development npx concurrently \"npm run watch:sass\" \"nodemon -e js,eta,css app.js\" ",
-        "watch:sass": "npx sass --watch --style=expanded src/assets/sass/main.scss dist/css/main.css",
-        "build:sass": "cross-env NODE_ENV=production npx sass --style=compressed src/assets/sass/main.scss dist/css/main.css",
+        "start": "cross-env NODE_ENV=development npx concurrently \"nodemon -e js,eta,css app.js\" ",
         "build": "npm run build:sass"
     },
     "repository": {
