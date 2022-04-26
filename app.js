@@ -83,4 +83,6 @@ app.listen(8080, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-reload(app);
+if (process.env.NODE_ENV !== "production") {
+    reload(app);
+}
