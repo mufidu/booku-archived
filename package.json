@@ -32,7 +32,6 @@
         "cssnano": "^5.0.17",
         "dotenv": "^16.0.0",
         "path-browserify": "^1.0.1",
-        "querystring-es3": "^0.2.1",
-        "reload": "^3.2.0"
+        "querystring-es3": "^0.2.1"
     }
 }

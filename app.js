@@ -9,9 +9,6 @@ const path = require('path');
 const methodOverride = require('method-override');
 const Book = require('./src/models/book');
 const morgan = require('morgan');
-if (process.env.NODE_ENV !== "production") {
-    const reload = require('reload');
-}
 
 const mongoose = require('mongoose');
 
@@ -84,7 +81,3 @@ const port = process.env.PORT || 8080;
 app.listen(8080, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-if (process.env.NODE_ENV !== "production") {
-    reload(app);
-}
