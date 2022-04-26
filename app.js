@@ -9,7 +9,9 @@ const path = require('path');
 const methodOverride = require('method-override');
 const Book = require('./src/models/book');
 const morgan = require('morgan');
-const reload = require('reload');
+if (process.env.NODE_ENV !== "production") {
+    const reload = require('reload');
+}
 
 const mongoose = require('mongoose');
 
