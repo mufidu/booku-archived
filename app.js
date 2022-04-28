@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const Eta = require("eta");
@@ -5,11 +9,12 @@ const path = require('path');
 const methodOverride = require('method-override');
 const Book = require('./src/models/book');
 const morgan = require('morgan');
-const reload = require('reload');
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/booku', {
+dbUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/booku';
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -71,8 +76,8 @@ app.delete('/books/:id', async (req, res) => {
     res.redirect('/books');
 });
 
-app.listen(8080, () => {
-    console.log('Server is running on port 8080');
-});
+const port = process.env.PORT || 8080;
 
-reload(app);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});

@@ -1,8 +1,14 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const Book = require('../src/models/book');
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/booku', {
+MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/booku';
+
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

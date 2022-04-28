@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "cross-env NODE_ENV=development npx concurrently \"nodemon -e js,eta,css app.js\" ",
+        "start-dev": "cross-env NODE_ENV=development nodemon -e js,eta,css app.js",
+        "start": "node app.js",
         "build": "npm run build:sass"
     },
     "repository": {
@@ -29,8 +30,9 @@
     "devDependencies": {
         "cross-env": "^7.0.3",
         "cssnano": "^5.0.17",
+        "dotenv": "^16.0.0",
+        "nodemon": "^2.0.15",
         "path-browserify": "^1.0.1",
-        "querystring-es3": "^0.2.1",
-        "reload": "^3.2.0"
+        "querystring-es3": "^0.2.1"
     }
 }
