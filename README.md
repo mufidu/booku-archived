@@ -35,6 +35,9 @@
 
 [API Documentation](https://documenter.getpostman.com/view/20639724/UyrAEwXR)
 
+## Video (Explanation and Demo)
+https://drive.google.com/file/d/1tr6HX6XjJn-LUMFbgPES452O5SFshlUJ/view?usp=sharing
+
 ## Live Demo (Optional)
 
 https://booku.mufidu.com/
